@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <title>Scotty Helps</title>
+        <meta charset="utf-8"/>
+        <style>
+            body {
+                    background-image: url("{{ url_for('static', filename='background.png') }}");
+            }
+            #logo {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: "75%";
+            }
+            h2 {
+                    margin-left: 10px;
+                    font-size: 50px;
+                }
+
+            b {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            h3 {
+                margin-left: 400px;
+            }
+        </style>
+    </head>
+    <body>
+            <image id = "logo" src = "{{ url_for('static', filename='logo2.png') }}" width = 500px/>
+            <br>
+            <h2>Course Statistics</h2>
+            <br>
+            <img src = "{{ url_for('static', filename='Overall_teaching_rate_plot.png') }}" width = 500px/>
+            <br>
+            <h3><b>Overall Teaching Rate</b></h3>
+            <img src = "{{ url_for('static', filename='Overall_course_rate_plot.png') }}" width = 500px/>
+            <br>
+            <h3><b>Overall Course Rate</b></h3>
+            <img src = "{{ url_for('static', filename='Hrs_Per_Week_plot.png') }}" width = 500px/>
+            <br>
+            <h3><b>Hours Per Week</b></h3>
+            <img src = "{{ url_for('static', filename='Course_plot.png') }}" width = 500px/>
+            <br>
+            <h3><b>Other Statistics</b></h3>
+    </body>

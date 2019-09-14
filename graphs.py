@@ -18,6 +18,8 @@ def makeGraphsl(course, y):
     plt.plot( 'x', 'y', data=df, linestyle='-', marker='o')
     plt.ylabel(y)
     plt.xlabel("Year")
+    y = y.split(" ")
+    y = "_".join(y)
     fig = plt.savefig("static/" + y +'_plot.png')
     plt.close(fig)
 
@@ -38,7 +40,7 @@ def makeGraph(course):
     plot = sns.barplot(x='rating',y='category', data=courseTable)
     plot.set_yticklabels(labels = {"Student Learning", "Feedback", "Explanations"}, rotation=45)
     figure = plot.get_figure()    
-    figure.savefig('static/' + course +'_plot.png', dpi=600)
+    figure.savefig('static/Course_plot.png', dpi=600)
     plt.close(figure)
     makeGraphsl(course, "Overall teaching rate")
     makeGraphsl(course, "Overall course rate")

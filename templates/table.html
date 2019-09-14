@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <title>Scotty Helps</title>
+        <meta charset="utf-8"/>
+        <style>
+                body {
+                    background-image: url("{{ url_for('static', filename='background.png') }}");
+                }
+                table {
+                    border-collapse: collapse;
+                    border: 2px black solid;
+                    font: 12px sans-serif;
+                    background: white;
+                    margin-left: 450px;
+                }
+    
+                td {
+                    border: 1px black solid;
+                    padding: 5px;
+                }
+                tr:first-child, td:first-child { font-weight: bold }
+
+                #logo {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: "75%";
+                }
+
+                h2 {
+                    margin-left: 10px;
+                    font-size: 50px;
+                }
+                form{
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-size: 20px;
+                }
+                input {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                b {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+        </style>    
+    </head>
+    <body>
+        <image id = "logo" src = "{{ url_for('static', filename='logo2.png') }}" width = 500px/>
+        <div id = "user">
+            <h2>Here are your recommended courses!</h2>
+        </div>
+        <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
+        <script src="{{ url_for('static', filename='d3.min.js') }}"></script>
+
+        <script type="text/javascript"charset="utf-8">
+            d3.text("{{ url_for('static', filename='queried.csv') }}", function(data) {
+                console.log(data);
+                var parsedCSV = d3.csv.parseRows(data);
+                var container = d3.select("body")
+                    .append("table")
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            })
+            ;
+        </script>
+        <b>What course would you like to learn more about?</b>
+        <script>
+            function getGraph() {
+                event.preventDefault()
+                var course = document.getElementById('coursePicked').value;
+                console.log("gothere");
+                console.log(course);
+                window.location.href = "/graph?course="+course
+                return false;
+            }
+        </script>
+        <form>
+            <input id = "coursePicked" 
+                    type = "text" size = "6" maxlength = "6" value = "XX-XXX">
+            <button onclick = 'getGraph()'>Submit</button>
+        </form>
+        <br>
+        <input type="button" value="Go back!" onclick="history.back()">
+        <br>
+    </body>
+</html>
