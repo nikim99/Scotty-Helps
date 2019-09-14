@@ -50,4 +50,4 @@ def get_new_table(dept, unitRange, year, sem, courseType = None):
     df = df.drop("sumSeries", axis = 1)
     df = df.reset_index()
     df = df.drop("index", axis = 1)
-    df.to_csv("data/queried.csv")
+    df.to_csv("static/queried.csv")
