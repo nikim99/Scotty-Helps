@@ -1,0 +1,11 @@
+Spring, Fall, M1, M2 (csv and json) are the original scraped data
+
+Spring_final etc are the merged data sets of fces and course data, and is the one we use everywhere
+
+raw_fce is the raw fce data and modified_fce is the better version of it, with consistent cells etc
+
+individual_fce will be used for the individual graphs part
+
+fce_2019 was used to rank the courses to show a student
+
+queried is a file that will always be rewritten when a new query is made

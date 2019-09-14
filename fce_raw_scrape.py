@@ -23,7 +23,7 @@ fce_raw["Course"] = None
 for i in range(len(fce_raw.index)):
     fce_raw["Course"][i] = fce_raw.loc[i, "Course ID"][:2] + "-" + \
         fce_raw.loc[i, "Course ID"][2:]
-fce_raw.drop("Course ID", axis = 1)
+fce_raw = fce_raw.drop("Course ID", axis = 1)
 
 fce_raw_2019 = (fce_raw[fce_raw.Year == 2019]).groupby("Course").agg({ \
     "Hrs Per Week":"median", "Interest in student learning":"median", \
