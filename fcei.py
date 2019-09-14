@@ -14,4 +14,4 @@ fcei = fce.groupby(["Course", "Year"]).agg({"Hrs Per Week":"median", \
 fcei.columns = ["".join(x) for x in fcei.columns.ravel()]
 fcei = fcei.reset_index()
 
-fcei.to_csv("data/individial_fce.csv")
+fcei.to_csv("data/individual_fce.csv")
