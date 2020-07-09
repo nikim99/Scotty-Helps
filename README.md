@@ -20,17 +20,3 @@ We learnt a lot of new concepts like data scraping, wrangling, and deployment, b
 
 ## What's next for Scotty Helps
 We're going to try to improve the user-interface to make it more dynamic and interesting for the user.
-
-## Installation Instructions
-
-Run these commands in the config_converter/config_parser_ruby/ directory
-<pre><code>  $ gem install bundler
-  $ bundle install
-  $ gem build config_parser.gemspec
-  $ gem install config_parser-0.0.0.gem
-</code></pre>
-
-## How to run
-
-<pre><code>  $ ./bin/config_converter path/to/config/file output/directory
-</code></pre>
