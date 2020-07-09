@@ -20,3 +20,7 @@ We learnt a lot of new concepts like data scraping, wrangling, and deployment, b
 
 ## What's next for Scotty Helps
 We're going to try to improve the user-interface to make it more dynamic and interesting for the user.
+
+<code>
+  $ enter
+ </code>
