@@ -32,6 +32,5 @@ Run these commands in the config_converter/config_parser_ruby/ directory
 
 ## How to run
 
-<code>
-  ./bin/config_converter path/to/config/file output/directory
-</code>
+<pre><code>  $ ./bin/config_converter path/to/config/file output/directory
+</code></pre>
