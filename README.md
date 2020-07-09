@@ -24,7 +24,7 @@ We're going to try to improve the user-interface to make it more dynamic and int
 ## Installation Instructions
 
 Run these commands in the config_converter/config_parser_ruby/ directory
-<pre><code>$ gem install bundler
+<pre><code>  $ gem install bundler
   $ bundle install
   $ gem build config_parser.gemspec
   $ gem install config_parser-0.0.0.gem
