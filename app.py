@@ -1,5 +1,4 @@
 from flask import Flask, render_template, url_for, request
-#style = "background-image: url({{ url_for('static', filename='background.png') }})"
 app = Flask(__name__)
 from rank_course import get_new_table
 from graphs import makeGraph
@@ -27,11 +26,6 @@ def getInputs():
     #query = open_file("static/queried.csv")
     get_new_table(department, units, year, sems, types)
     return render_template("table.html")
-
-# @app.route("queried.csv")
-# def read_file(file):
-#     data = read_file(file)
-#     return data
 
 @app.route("/salvador")
 def salvador():
